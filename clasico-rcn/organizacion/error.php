@@ -15,33 +15,19 @@ function MM_findObj(n, d) { //v4.01
 }
 //-->
 </script>
-<script type="text/javascript" src="../js/jquery-1.2.6.min.js"></script>
-<script type="text/javascript">
-			$(document).ready(function(){
-				$("div.redes").hide();
-				$("a:first").click(function () {
-					if ($("div.redes").is(":hidden")) {
-						$("div.redes").slideDown("slow");
-					} else {
-						$("div.redes").slideUp();
-					}
-				});
-				$(".jq-runCode").click(function(){
-					$("div.redes").slideUp();
-				});
-			});
-</script>
+
 </head>
 
 <body>
 <div id="header"></div>
 <div id="container">
   <div class="formulario">
-    <h1>&nbsp;</h1>
-    <h1>&nbsp;</h1>
+    <div class="gracias">
     <h1>Error,  no ha diligenciado el formulario correctamente</h1>
     <p><b>Por favor int&eacute;ntelo nuevamente. <br />
         <a href="index.php">&laquo;    Regresar</a></b></p>
+    </div>
+    
   </div>
   <div class="gracias"></div>
 </div>

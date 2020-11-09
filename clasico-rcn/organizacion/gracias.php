@@ -26,16 +26,14 @@ function MM_findObj(n, d) { //v4.01
 </div>
 <div id="container">
   <div class="formulario">
-  <div class="centerLogo">
-                <img src="images/ClasicoRCN2020Andina.png" alt="">
+    <div class="gracias">
+      <h1 class="fontGral">
+      Registro Realizado Exitosamente</h1>
+      <p class="tks">La información suministrada debe ser veridica y responsabilidad de la persona que la diligencia.
+      </p>
+    </div>
+    
   </div>
-
-    <h1 class="fontGral">
-    Registro Realizado Exitosamente</h1>
-    <p class="tks">La información suministrada debe ser veridica y responsabilidad de la persona que la diligencia.
-    </p>
-  </div>
-  <div class="gracias"></div>
 </div>
 <div id="footer"></div>
 </body>

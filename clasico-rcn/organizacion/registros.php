@@ -58,9 +58,6 @@ function loadData($audios, $database_audios, $query)
 
   return $response_bd;
 }
-
-
-
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -68,44 +65,35 @@ function loadData($audios, $database_audios, $query)
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2" />
+  <link href="css/registro.css" rel="stylesheet" type="text/css" />
   <title>RESULTADOS</title>
-  <style type="text/css">
-    .Estilo6 {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 12px;
-    }
-
-    .Estilo7 {
-      font-family: Arial, Helvetica, sans-serif;
-      font-weight: bold;
-    }
-
-    .Estilo13 {
-      color: #FFFFFF;
-      font-weight: bold;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 14px;
-    }
-  </style>
 </head>
 
 <body>
-  <p class="Estilo7">ORGANIZACIÓN CLASICO RCN</p>
-  <? if (isset($_POST['xcedula']) && $_POST['xcedula'] != '') {
-    echo '<form action="descarga.php" method="post">
-     <h3>Descargue el reporte del numero de cedula => ' . (isset($_POST['xcedula']) ? $_POST['xcedula'] : '' ) . '</h3>
-    <input type="hidden" name="cedula" id="cedula" value="'. (isset($_POST['xcedula']) ? $_POST['xcedula'] : '' ) .'">
-    <img src="images/icono-excel.gif" width="36" height="36" border="0" align="absmiddle" />
-    <button type="submit">Descargar lista</button>
-  </form>';
-  }
-  ?>
-  <br>
-  <br>
-  <h3>Descarge Todos los registros</h3>
-  <p class="Estilo6"><a href="mys.php"><img src="images/icono-excel.gif" width="36" height="36" border="0" align="absmiddle" /> <strong>Descargar archivo</strong></a><strong></strong></p>
-
-  <form action="" method="post" name="form3" id="form3" onSubmit="return">
+<div id="container">
+  <div class="formulario">
+    <div class="gracias">
+      <h1 class="fontGral"> REPORTE DE REGISTROS ORGANIZACIÓN </h1>
+      <div class="flex">
+        <div class="left">
+          <h3>Descarge Todos los registros</h3>
+          <p class="Estilo6"><a href="mys.php"><img src="images/excel_icono.png" width="36" height="36" border="0" align="absmiddle" /> <strong>Descargar archivo</strong></a><strong></strong></p>
+        </div>
+        <div class="right">
+            <? if (isset($_POST['xcedula']) && $_POST['xcedula'] != '') {
+              echo '<form action="descarga.php" method="post">
+              <h3>Descargue el reporte del numero de cedula => ' . (isset($_POST['xcedula']) ? $_POST['xcedula'] : '' ) . '</h3>
+              <input type="hidden" name="cedula" id="cedula" value="'. (isset($_POST['xcedula']) ? $_POST['xcedula'] : '' ) .'">
+              <img src="images/excel_icono.png" width="36" height="36" border="0" align="absmiddle" />
+              <button type="submit">Descargar lista</button>
+            </form>';
+            }
+            ?>
+        </div>
+      </div>
+      <div>
+      <div class="input">
+      <form action="" method="post" name="form3" id="form3" onSubmit="return">
     <table border="0" align="center" cellpadding="5" cellspacing="0">
       <tr>
         <td colspan="2">
@@ -131,23 +119,33 @@ function loadData($audios, $database_audios, $query)
       </tr>
     </table>
   </form>
-
-  <table width="100%" border="0" cellpadding="3" cellspacing="1">
-    <tr bgcolor="#000000">
-      <td><span class="Estilo13">ID</span></td>
-      <td><span class="Estilo13">NOMBRE</span></td>
-      <td><span class="Estilo13">CEDULA</span></td>
-      <td><span class="Estilo13">EDAD</span></td>
-      <td><span class="Estilo13">ENTIDAD</span></td>
-      <td><span class="Estilo13">CARGO</span></td>
-      <td><span class="Estilo13">EPS</span></td>
-      <td><span class="Estilo13">ARL</span></td>
-      <td><span class="Estilo13">GRUPO SANGUINEO</span></td>
-      <td><span class="Estilo13">CELULAR</span></td>
-      <td><span class="Estilo13">NOMBRE CONTACTO</span></td>
-      <td><span class="Estilo13">TELEFONO CONTACTO</span></td>
-      <td><span class="Estilo13">FECHA</span></td>
-      <td><span class="Estilo13">HORA</span></td>
+      </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+<div class="container_form">
+<table class="table_result" width="100%" border="0" cellpadding="3" cellspacing="1">
+    <tr class="header_table">
+      <td><span >ID</span></td>
+      <td><span >NOMBRE</span></td>
+      <td><span >CEDULA</span></td>
+      <td><span >EDAD</span></td>
+      <td><span >ENTIDAD</span></td>
+      <td><span >CARGO</span></td>
+      <td><span >EPS</span></td>
+      <td><span >ARL</span></td>
+      <td><span >GRUPO SANGUINEO</span></td>
+      <td><span >CELULAR</span></td>
+      <td><span >NOMBRE CONTACTO</span></td>
+      <td><span >TELEFONO CONTACTO</span></td>
+      <td><span >¿DIFICULTAD PARA RESPIRAR?</span></td>
+      <td><span >¿TOS SECA?</span></td>
+      <td><span >¿TEMPERATURA MAYOR A 38º?</span></td>
+      <td><span >¿CONVIVE CON ALGUIEN POSITIVO COVID-19?</span></td>
+      <td><span >FECHA</span></td>
+      <td><span >HORA</span></td>
     </tr>
 
     <?php do { ?>
@@ -189,6 +187,18 @@ function loadData($audios, $database_audios, $query)
           <div align="justify"><?php echo $row_cambiar['telresponsable']; ?> </div>
         </td>
         <td height="30">
+          <div align="justify"><?php echo $row_cambiar['respiracion']; ?> </div>
+        </td>
+        <td height="30">
+          <div align="justify"><?php echo $row_cambiar['tos']; ?> </div>
+        </td>
+        <td height="30">
+          <div align="justify"><?php echo $row_cambiar['temperatura']; ?> </div>
+        </td>
+        <td height="30">
+          <div align="justify"><?php echo $row_cambiar['convive_covid']; ?> </div>
+        </td>
+        <td height="30">
           <div align="justify"><?php echo $row_cambiar['fecha']; ?> </div>
         </td>
         <td height="30">
@@ -212,9 +222,14 @@ function loadData($audios, $database_audios, $query)
         <td height="5"></td>
         <td height="5"></td>
         <td height="5"></td>
+        <td height="5"></td>
+        <td height="5"></td>
+        <td height="5"></td>
+        <td height="5"></td>
       </tr>
     <?php } while ($row_cambiar = mysqli_fetch_assoc($response_bd)); ?>
   </table>
+</div>
 </body>
 
 </html>

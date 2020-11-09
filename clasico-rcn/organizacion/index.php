@@ -42,10 +42,6 @@
 	if (isset($_SERVER['QUERY_STRING'])) {
 		$editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
 	}
-  
-  // var_dump($_POST);
-  // var_dump($_SERVER['QUERY_STRING']);
-  // exit;
    
 	if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form2")) {
 		$insertSQL = sprintf(
@@ -68,7 +64,8 @@
       GetSQLValueString($_POST['fecha'], "text"),
       GetSQLValueString($_POST['hora'], "text")
     );
-		
+    
+
 		// $hostname_audios = "10.0.0.156";
 		// $database_audios = "clscorcn";
 		// $username_audios = "minsits";
@@ -77,7 +74,9 @@
       $database_audios = "clscorcn";
       $username_audios = "root";
       $password_audios = "";
+
     $audios = mysqli_connect($hostname_audios, $username_audios, $password_audios, $database_audios) or die("Error al conectarse a la base de datos");
+
     $Result1 = mysqli_query($audios, $insertSQL) or die(('<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /><meta http-equiv="Refresh" content="1;url=error.php"></head><body></body></html>'));
 
 		$insertGoTo = "gracias.php";

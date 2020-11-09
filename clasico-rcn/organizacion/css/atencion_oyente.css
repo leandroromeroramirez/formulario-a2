@@ -5,7 +5,7 @@ body {
 	font-size: 62.5%;
 	color: #000000;
 	background-color: #063977;
-	background-image: url(img/fondo_body.gif);
+	background-image: url(images/fondo_body.gif);
 	background-repeat:  repeat-x;
 	background-position: left top;
 }
@@ -21,7 +21,7 @@ strong {
 	width: 750px;
 	margin-right: auto;
 	margin-left: auto;
-	background-image: url(img/fondo.gif);
+	background-image: url(images/fondo.gif);
 	background-repeat: no-repeat;
 	background-position: center top;
 	font-size: 1.2em;
@@ -41,7 +41,7 @@ div.gracias {
 	text-align: center;
 	padding-right: 60px;
 	padding-left: 60px;
-	background-image: url(img/gracias.png);
+	background-image: url(images/gracias.png);
 	background-repeat: no-repeat;
 	background-position: 45px 200px;
 	height: 550px;
