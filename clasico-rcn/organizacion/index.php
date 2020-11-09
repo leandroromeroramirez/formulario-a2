@@ -49,7 +49,7 @@
    
 	if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form2")) {
 		$insertSQL = sprintf(
-      "INSERT INTO organizacion (nombre, cedula, edad, entidad, cargo, eps, arl, gruposanguineo, celular, responsable, telresponsable, fecha, hora) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
+      "INSERT INTO organizacion (nombre, cedula, edad, entidad, cargo, eps, arl, gruposanguineo, celular, responsable, telresponsable, respiracion, tos, temperatura, convive_covid, fecha, hora) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
 			GetSQLValueString($_POST['nombre'], "text"),
 			GetSQLValueString($_POST['cedula'], "text"),
 			GetSQLValueString($_POST['edad'], "int"),
@@ -61,6 +61,10 @@
       GetSQLValueString($_POST['celular'], "text"),
       GetSQLValueString($_POST['responsable'], "text"),
 			GetSQLValueString($_POST['telresponsable'], "text"),
+      GetSQLValueString($_POST['respiracion'], "text"),
+      GetSQLValueString($_POST['tos'], "text"),
+      GetSQLValueString($_POST['temperatura'], "text"),
+      GetSQLValueString($_POST['convive_covid'], "text"),
       GetSQLValueString($_POST['fecha'], "text"),
       GetSQLValueString($_POST['hora'], "text")
     );
@@ -93,7 +97,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
   <title>RCN RADIO | REGISTRO DE ORGANIZACI&Oacute;N CLASICO RCN</title>
-  <link href="build/assets/css/style.css" rel="stylesheet" type="text/css"/>
+  <link href="css/style.css" rel="stylesheet" type="text/css"/>
 
   <!-- boostrap -->
   <!-- Latest compiled and minified CSS -->
@@ -116,17 +120,16 @@
 </head>
 
 <body>
-<script type="text/javascript" src="js/validation.js"></script>
 
 <div class="header">
-  <a target="_blank" href="https://www.antena2.com.co/"><img src="logo_antena2.svg" alt=""></a>
+  <a target="_blank" href="https://www.antena2.com.co/"><img src="images/logo_antena2.svg" alt=""></a>
 </div>
 <div id="container">
   <div class="formulario">
 
     <div class="container">
       <div class="col-lg-5 col-md-5 col-sm-12 wrap-left">
-        <img src="ClasicoRCN2020Andina.png" alt="">
+        <img src="images/ClasicoRCN2020Andina.png" alt="">
         <h1>Registro de organización</h1>
         <p>Los campos con asteriscos (*) son obligatorios.</p>
       </div>
@@ -165,7 +168,7 @@
                       <td colspan="3">
                         <div class="input-field20">
                           <input placeholder="Edad" name="edad" type="number"
-                                 class="cajadetexto" id="edad" size="40"/>
+                                 class="cajadetexto" id="edad" size="40" required/>
                         </div>
                       </td>
                     </tr>
@@ -174,7 +177,7 @@
                       <td colspan="3">
                         <div class="input-field20">
                           <input placeholder="Entidad" name="entidad" type="text"
-                                 class="cajadetexto" id="entidad" size="40"/>
+                                 class="cajadetexto" id="entidad" size="40" required/>
                         </div>
                       </td>
                     </tr>
@@ -183,7 +186,7 @@
                       <td colspan="3">
                         <div class="input-field20">
                           <input placeholder="Cargo" name="cargo" type="text"
-                                 class="cajadetexto" id="cargo" size="40"/>
+                                 class="cajadetexto" id="cargo" size="40" required/>
                         </div>
                       </td>
                     </tr>
@@ -192,7 +195,7 @@
                       <td colspan="3">
                         <div class="input-field20">
                           <input placeholder="EPS*" name="eps" type="text" class="cajadetexto"
-                                 id="eps" size="40" />
+                                 id="eps" size="40" required/>
                         </div>
                       </td>
                     </tr>
@@ -201,7 +204,7 @@
                       <td colspan="3">
                         <div class="input-field20">
                           <input placeholder="ARL*" name="arl" type="text" class="mb15"
-                                 id="arl" size="40" />
+                                 id="arl" size="40" required/>
                         </div>
                       </td>
                     </tr>
@@ -307,6 +310,97 @@
                    
                   </table>
 
+<!-- INFORMACI&Oacute;N SALUD -->
+<table border="0" align="center" cellpadding="5" cellspacing="0" class="wrap-table">
+                    <tr>
+                      <td colspan="3" align="center" valign="top"><span
+                            class="titulo">INFORMACIÓN DE SALUD</span>
+                      </td>
+                    </tr>
+                    
+                    <!-- Dificultad para respirar -->
+                    <tr>
+                      <td colspan="3">
+                        <div class="input-field20">
+                          <div class="wrap-select">
+                    <select name="respiracion" class="cajatexto3" required>
+                              <option value="" disabled selected>Dificultad para respirar*</option>
+                              <option value="si" <?php if (!(strcmp(1, ""))) {
+																echo "SELECTED";
+															} ?>>Si
+                              </option>
+                              <option value="no" <?php if (!(strcmp(1, ""))) {
+																echo "SELECTED";
+															} ?>>No
+                              </option>
+                              </select>
+                              </div>
+                              </div>
+                              </td>
+                              </tr>
+
+                    <!-- TOS -->
+      <tr>
+                      <td colspan="3">
+                        <div class="input-field20">
+                          <div class="wrap-select">
+                    <select name="tos" class="cajatexto3" required>
+                              <option value="" disabled selected>¿Tos Seca?*</option>
+                              <option value="si" <?php if (!(strcmp(1, ""))) {
+																echo "SELECTED";
+															} ?>>Si
+                              </option>
+                              <option value="no" <?php if (!(strcmp(1, ""))) {
+																echo "SELECTED";
+															} ?>>No
+                              </option>
+                              </select>
+                              </div>
+                              </div>
+                              </td>
+                              </tr>
+                    <!-- Temperatura superior a 38º-->
+                    <tr>
+                      <td colspan="3">
+                        <div class="input-field20">
+                          <div class="wrap-select">
+                    <select name="temperatura" class="cajatexto3" required>
+                              <option value="" disabled selected>¿Temperatura superior a 38º?*</option>
+                              <option value="si" <?php if (!(strcmp(1, ""))) {
+																echo "SELECTED";
+															} ?>>Si
+                              </option>
+                              <option value="no" <?php if (!(strcmp(1, ""))) {
+																echo "SELECTED";
+															} ?>>No
+                              </option>
+                              </select>
+                              </div>
+                              </div>
+                              </td>
+                              </tr>
+                    <!-- HORA -->
+                    <tr>
+                      <td colspan="3">
+                        <div class="input-field20">
+                          <div class="wrap-select">
+                    <select name="convive_covid" class="cajatexto3" required>
+                              <option value="" disabled selected>¿Convive con alguien positivo para Covid?*</option>
+                              <option value="si" <?php if (!(strcmp(1, ""))) {
+																echo "SELECTED";
+															} ?>>Si
+                              </option>
+                              <option value="no" <?php if (!(strcmp(1, ""))) {
+																echo "SELECTED";
+															} ?>>No
+                              </option>
+                              </select>
+                              </div>
+                              </div>
+                              </td>
+                              </tr>
+                   
+                  </table>
                   <table border="0" align="center" cellpadding="5" cellspacing="0" class="wrap-table">
                     <tr>
                       <td colspan="3" align="center"><span class="titulo">NOTA LEGAL</span></td>

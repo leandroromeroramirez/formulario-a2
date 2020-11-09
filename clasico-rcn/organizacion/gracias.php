@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>RCN RADIO</title>
-<link href="build/assets/css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/style_2.css" rel="stylesheet" type="text/css" />
 
 <!-- boostrap -->
 <!-- Latest compiled and minified CSS -->
@@ -22,17 +22,17 @@ function MM_findObj(n, d) { //v4.01
 
 <body>
 <div class="header">
-    <a href="https://www.antena2.com.co/"><img src="logo_antena2.svg" alt=""></a>
+    <a href="https://www.antena2.com.co/"><img src="images/logo_antena2.svg" alt=""></a>
 </div>
 <div id="container">
   <div class="formulario">
   <div class="centerLogo">
-                <img src="ClasicoRCN2020Andina.png" alt="">
+                <img src="images/ClasicoRCN2020Andina.png" alt="">
   </div>
 
     <h1 class="fontGral">
-    Su inscripci&oacute;n fue realizada exitosamente.</h1>
-    <p class="tks">En los pr&oacute;ximos d&iacute;as la organizaci&oacute;n se pondr&aacute; en contacto con usted.
+    Registro Realizado Exitosamente</h1>
+    <p class="tks">La información suministrada debe ser veridica y responsabilidad de la persona que la diligencia.
     </p>
   </div>
   <div class="gracias"></div>

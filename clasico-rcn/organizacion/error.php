@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>RCN RADIO | REGISTRO DE ACREDITACI&Oacute;N CLASICO RCN CLARO 2016</title>
-<link href="style.css" rel="stylesheet" type="text/css" />
+<title>RCN RADIO | REGISTRO DE ORGANIZACIÓN</title>
+<link href="css/style_2.css" rel="stylesheet" type="text/css" />
 <script type="text/JavaScript">
 <!--
 function MM_findObj(n, d) { //v4.01
