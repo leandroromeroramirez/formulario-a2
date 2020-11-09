@@ -1,0 +1,27 @@
+# Autoprefixer will make sure your CSS works with these browsers
+COMPATIBILITY:
+  - "last 2 versions"
+  - "ie >= 8"
+
+# Gulp will reference these paths when it copies files
+PATHS:
+  # Path to dist folder
+  dist:
+    root: "build"
+    assets: "build/assets"
+    libs: "build/libs"
+  src:
+    # Paths to static assets that aren't images, CSS, or JavaScript
+    folders:
+      - "source/assets/{images,js,fonts}/*"
+      - "!source/assets/{images,js,scss}/**/*"
+    images: "source/assets/images"
+    js:
+      # Paths to your own project code are here
+      - "source/assets/js/**/*.js"
+    scss:
+      - "source/assets/scss/style.scss"
+  # Path node modules
+  node_modules: "node_modules"
+DOMAIN:
+  proxy: "localhost:8888"

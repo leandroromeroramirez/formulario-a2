@@ -1,0 +1,75 @@
+body {
+	margin: 0px;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 62.5%;
+	color: #000000;
+	background-color: #063977;
+	background-image: url(img/fondo_body.gif);
+	background-repeat:  repeat-x;
+	background-position: left top;
+}
+p {
+	margin: 0px;
+}
+
+strong {
+	color: #000000;
+}
+
+#container {
+	width: 750px;
+	margin-right: auto;
+	margin-left: auto;
+	background-image: url(img/fondo.gif);
+	background-repeat: no-repeat;
+	background-position: center top;
+	font-size: 1.2em;
+	background-color: #FFFFFF;
+}
+div.formulario {
+	text-align: left;
+	padding-top: 110px;
+	padding-right: 60px;
+	padding-left: 60px;
+	padding-bottom: 20px;
+}
+div.formulario p {
+	padding-bottom: 10px;
+}
+div.gracias {
+	text-align: center;
+	padding-right: 60px;
+	padding-left: 60px;
+	background-image: url(img/gracias.png);
+	background-repeat: no-repeat;
+	background-position: 45px 200px;
+	height: 550px;
+}
+div.gracias p {
+	padding-bottom: 10px;
+}
+
+.cajadetexto {
+	border: 1px solid #2363A3;
+	font-size: 1.1em;
+	background-color: #F4F4F4;
+	font-family: Arial, Helvetica, sans-serif;
+}
+form {
+	margin: 0px;
+}
+#footer {
+	width: 750px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-bottom: 20px;
+	background-color: #FFFFFF;
+}
+.boton {
+	color: #FFFFFF;
+	background-color: #6C9A10;
+	font-size: 1.3em;
+	font-weight: bold;
+	border: 1px solid #648C0F;
+}
